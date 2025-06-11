@@ -33,7 +33,7 @@ const NaturalHero = () => {
             className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-none text-lg group"
             onClick={() => shopCapture.openModal()}
           >
-            SHOP NOW
+            Intrested
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>

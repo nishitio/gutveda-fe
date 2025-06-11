@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -86,7 +85,16 @@ export default {
 					700: '#047857',
 					800: '#065f46',
 					900: '#064e3b',
-				}
+				},
+				beige: {
+					DEFAULT: '#F8E7C1',
+				},
+				burnt: {
+					orange: '#D98C3A',
+				},
+				forest: {
+					green: '#2C4A32',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -114,7 +122,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			fontFamily: {
+				playfair: ['Playfair Display', 'serif'],
+				lato: ['Lato', 'sans-serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

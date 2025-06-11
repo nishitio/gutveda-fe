@@ -1,53 +1,19 @@
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import LeadCaptureModal from "@/components/LeadCaptureModal";
-import { useLeadCapture } from "@/hooks/useLeadCapture";
+import React from "react";
 
-const Header = () => {
-  const contactCapture = useLeadCapture({ 
-    source: "header-contact", 
-    // productInterest and defaultProduct are now set dynamically in openModal
-  });
-
-  return (
-    <header className="bg-white shadow-sm border-b">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between py-4">
-          <div className="flex items-center space-x-8">
-            <button className="lg:hidden">
-              <Menu className="w-6 h-6" />
-            </button>
-            
-            <div className="text-4xl font-bold text-orange-600">
-              Gut<span className="text-emerald-600">Veda</span>
-            </div>
-            
-            <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#products" className="text-sage-700 hover:text-emerald-600 transition-colors">Products</a>
-              <a href="#benefits" className="text-sage-700 hover:text-emerald-600 transition-colors">Benefits</a>
-              <a href="#recipes" className="text-sage-700 hover:text-emerald-600 transition-colors">Recipes</a>
-              <a href="#about" className="text-sage-700 hover:text-emerald-600 transition-colors">About Us</a>
-            </nav>
-          </div>
-
-          <Button 
-            className="bg-emerald-600 hover:bg-emerald-700 text-white"
-            onClick={() => contactCapture.openModal("contact", "psyllium-husk")}
-          >
-            Contact Us
-          </Button>
-        </div>
-      </div>
-
-      <LeadCaptureModal 
-        open={contactCapture.isOpen} 
-        onOpenChange={contactCapture.closeModal}
-        source={contactCapture.source}
-        productInterest={contactCapture.productInterest}
-        defaultProduct={contactCapture.defaultProduct}
-      />
-    </header>
-  );
-};
+const Header = () => (
+  <header className="relative flex flex-col items-center pt-8 pb-4 z-20">
+    <div className="flex flex-col items-center">
+      <img src="/src/assets/logo.svg" alt="GutVeda Logo" className="w-12 mb-2" />
+      <span className="font-playfair text-3xl md:text-4xl font-bold text-forest-green tracking-wide">GutVeda</span>
+    </div>
+    <nav className="absolute right-8 top-8">
+      <ul className="flex gap-8 text-forest-green font-lato font-bold text-base uppercase">
+        {/* <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Shop</a></li> */}
+      </ul>
+    </nav>
+  </header>
+);
 
 export default Header;

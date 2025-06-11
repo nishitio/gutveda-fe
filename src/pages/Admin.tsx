@@ -19,8 +19,12 @@ interface LeadData {
   name: string;
   email: string;
   source: string;
-  productInterest: string;
-  product: string;
+  productInterest?: string;
+  product?: string;
+  productFormat?: string;
+  flavor?: string;
+  quantity?: number;
+  type?: 'cart' | 'contact';
   createdAt: string;
 }
 
@@ -416,8 +420,10 @@ const Admin = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Name</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Email</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Source</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Interest</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Product</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Type</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Product Format</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Flavor</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Quantity</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-sage-500 uppercase tracking-wider">Date</th>
                   </tr>
                 </thead>
@@ -427,7 +433,7 @@ const Admin = () => {
                     if (!lead) {
                       return null; 
                     }
-                    const { _id, name, email, source, productInterest, product, createdAt } = lead;
+                    const { _id, name, email, source, productInterest, product, createdAt, productFormat, flavor, quantity, type } = lead;
 
                     return (
                       <tr key={_id || `no-id-${Math.random()}`} className="hover:bg-sage-50">
@@ -441,10 +447,16 @@ const Admin = () => {
                           {(source?.replace('-', ' ')) || 'N/A'}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-sage-600 capitalize">
-                          {(productInterest?.replace('-', ' ')) || 'N/A'}
+                          {(type?.replace('-', ' ')) || 'N/A'}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-sage-600 capitalize">
-                          {(product?.replace('-', ' ')) || 'N/A'}
+                          {(productFormat?.replace('-', ' ')) || 'N/A'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-sage-600 capitalize">
+                          {(flavor?.replace('-', ' ')) || 'N/A'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-sage-600">
+                          {(quantity !== undefined && quantity !== null) ? quantity : 'N/A'}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-sage-600">
                           {new Date(createdAt || Date.now()).toLocaleDateString()}
