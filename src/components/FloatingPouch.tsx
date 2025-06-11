@@ -8,13 +8,13 @@ const FloatingPouch = ({ format }: FloatingPouchProps) => {
   const getProductImage = () => {
     switch (format) {
       case "finepowder":
-        return "/src/assets/pouch.png";
+        return "/assets/pouch.png";
       case "husk":
-        return "/src/assets/husk.png";
+        return "/assets/husk.png";
       case "tablets":
-        return "/src/assets/tablets.png";
+        return "/assets/tablets.png";
       default:
-        return "/src/assets/pouch.png";
+        return "/assets/pouch.png";
     }
   };
 

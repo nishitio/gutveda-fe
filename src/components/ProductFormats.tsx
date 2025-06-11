@@ -6,9 +6,9 @@ interface ProductFormatsProps {
 }
 
 const formats = [
-  { key: "finepowder", icon: "/src/assets/finepowder.svg", label: "Powder" },
-  { key: "husk", icon: "/src/assets/husk.svg", label: "Husk" },
-  { key: "tablets", icon: "/src/assets/tablets.svg", label: "Tablets" },
+  { key: "finepowder", icon: "/assets/finepowder.svg", label: "Powder" },
+  { key: "husk", icon: "/assets/husk.svg", label: "Husk" },
+  { key: "tablets", icon: "/assets/tablets.svg", label: "Tablets" },
 ];
 
 const ProductFormats = ({ format, setFormat }: ProductFormatsProps) => (
