@@ -41,7 +41,7 @@ const ProductModal = ({ isOpen, onClose, selectedFormat, productImage }: Product
     console.log('Sending data:', requestData);
 
     try {
-      const response = await fetch('http://localhost:5050/api/leads/cart', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leads/cart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

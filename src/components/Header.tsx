@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => (
   <header className="relative flex flex-col items-center pt-8 pb-4 z-20">
     <div className="flex flex-col items-center">
-      <img src="/assets/logo.svg" alt="GutVeda Logo" className="w-12 mb-2" />
+      <img src="/assets/logo.svg" alt="GutVeda Logo" className="w-20 mb-2" />
       <span className="font-playfair text-3xl md:text-4xl font-bold text-forest-green tracking-wide">GutVeda</span>
     </div>
     <nav className="absolute right-8 top-8">

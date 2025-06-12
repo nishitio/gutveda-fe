@@ -38,7 +38,7 @@ const ProductFormats = ({ format, setFormat }: ProductFormatsProps) => (
             <img
               src={f.icon}
               alt={f.label}
-              className="w-6 h-6 sm:w-7 sm:h-7 transition"
+              className="w-full h-full transition"
             />
           </span>
           <span className={`text-xs sm:text-xs font-bold transition
